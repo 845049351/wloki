@@ -2,52 +2,10 @@
 
 ## 功能介绍
 
-Loki 是专为豌豆荚服务体系打造的自动化运维平台，有一个非常恰当的英文单词来描述它:
-[Orchestration](http://en.wikipedia.org/wiki/Orchestration_(computing)) Platform
-(which is better than automation :).
-
-Loki 的主要用途:
-
-
-### 监控展示
-
-> 注: 以下各种服务器相关的指标，均刨除了在资源池中的服务器
-
-* **Loki 首页的图表示什么**
-
-    * cpu 使用率，是整个公司的平均使用率
-
-    * 资源使用总览，是每个产品线的资源使用率
-
-    * Domain Bandwidth/Availability 域名所使用的带宽、可用率
-
-        可用率计算方式：(20X+30X) / (all requests - 40X)
-
-    * 产品线可用率、响应时间，这是根据绑定到产品线节点上的 url(s) 的可用率综合计算出来的，
-    如果没有看到你所在的产品线，说明在你的产品线节点上没有绑定任何 url
-
-    * n 天平均可用率、响应时间。表示 n 天内，各个产品线的这两个指标的所有监测点的平均值
-
-* **如何查看服务器性能指标**
-
-    在这[系统展示](http://loki.DOMAIN.com/draw)里找到你所在的产品线，点进去就可以看到各种指标
-
-* 如何查看域名的各个指标，如 qps，响应时间，使用带宽，可用率等
-
-    在[域名展示](http://loki.DOMAIN.com/domain)可以查到域名的四个指标：
-
-    * queries per second
-    * response time (ms)
-    * bandwidth (byte)
-    * availability
-
-* 怎样监控某一个域名的某个 path
-
-    默认情况下，你所要查的 url，可能不存在，因为太具体了；所以得找 sre 将要监控的 url 绑定到你所在的产品线即可
-
 ### 部署
 
 请参考[文档]()
+
 
 
 ## 开发
