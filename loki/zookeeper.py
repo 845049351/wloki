@@ -1,7 +1,7 @@
 # coding: utf-8
 from contextlib import contextmanager
 
-__author__ = 'qinguoan@nosa.me'
+__author__ = 'qinguoan@DOMAIN.com'
 
 from os import path
 import socket

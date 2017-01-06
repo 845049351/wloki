@@ -4,8 +4,8 @@
 #
 #    pip-compile requirements.in
 #
--e git+http://gitlab.hy01.internal.nosa.me/sre-team/kazoo.git#egg=kazoo
--e git+http://gitlab.hy01.internal.nosa.me/sre-team/python-lazy-object-proxy.git#egg=lazy-object-proxy
+-e git+http://gitlab.hy01.internal.DOMAIN.com/sre-team/kazoo.git#egg=kazoo
+-e git+http://gitlab.hy01.internal.DOMAIN.com/sre-team/python-lazy-object-proxy.git#egg=lazy-object-proxy
 backports.ssl-match-hostname==3.4.0.2  # via tornado
 blinker==1.4
 certifi==2015.9.6.2       # via tornado

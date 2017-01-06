@@ -42,12 +42,12 @@ class NginxDeploy(JobTemplate, TemplateMixin):
     def change_deploy_branch(self, value):
         try:
             raw = asyncrequest("GET",
-                               "http://access.hy01.nosa.me/api/v1/nginx/branches",
+                               "http://access.hy01.DOMAIN.com/api/v1/nginx/branches",
                                timeout=2)
             git_branches = raw.json()
         except Exception as e:
             raise FatalError(
-                "get git branch from http://access.hy01.nosa.me/api/v1/nginx/branches failed as %s" % e)
+                "get git branch from http://access.hy01.DOMAIN.com/api/v1/nginx/branches failed as %s" % e)
         value['items'] = make_items(git_branches)
         return value
 

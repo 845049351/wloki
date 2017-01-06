@@ -37,18 +37,18 @@ class RedisInstance(db.Model, ModelMixin):
         # If host is ip, gethostname
         if re.match(r'^\d+.\d+.\d+.\d+$', host):
             try:
-                host = socket.gethostbyaddr(host)[0].replace('.nosa.me', '')
+                host = socket.gethostbyaddr(host)[0].replace('.DOMAIN.com', '')
             except:
                 print "!!DEBUG!! connect to redis exception"
-        # If host end with '.nosa.me', delete that
-        if re.match(r'^.+\.nosajia\.com$', host):
-            host = host.replace('.nosa.me', '')
+        # If host end with '.DOMAIN.com', delete that
+        if re.match(r'^.+\.DOMAIN\.com$', host):
+            host = host.replace('.DOMAIN.com', '')
 
         try:
             # If need to update redis info
             if not update:
                 raise ValueError('Just raise to get default value')
-            r = get_redis(host=host+'.nosa.me', port=port, db=0)
+            r = get_redis(host=host+'.DOMAIN.com', port=port, db=0)
 
             p_cmaxm = r.config_get(pattern='maxmemory')['maxmemory']
             p_cdir = r.config_get(pattern='dir')['dir']
@@ -159,9 +159,9 @@ class CodisInstance(db.Model, ModelMixin):
                         dashboard[0] = socket.gethostbyaddr(dashboard[0])[0]
                     except:
                         pass
-                # If hostname end with '.nosa.me', delete that
-                if re.match(r'^.+\.nosajia\.com$', dashboard[0]):
-                    dashboard[0] = dashboard[0].replace('.nosa.me', '')
+                # If hostname end with '.DOMAIN.com', delete that
+                if re.match(r'^.+\.DOMAIN\.com$', dashboard[0]):
+                    dashboard[0] = dashboard[0].replace('.DOMAIN.com', '')
                 dashboard = 'http://' + ':'.join(dashboard)
             except Exception as e:
                 dashboard = ''

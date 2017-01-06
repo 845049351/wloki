@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-__author__ = 'qinguoan@nosa.me,zhouqiang@nosa.me'
+__author__ = 'qinguoan@DOMAIN.com,zhouqiang@DOMAIN.com'
 
 import re
 import os

@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 from os import path
 import random
+import tornado
+import urllib
 import shlex
 from collections import defaultdict
 import time
@@ -34,8 +36,8 @@ class TemplateMixin(object):
     __metaclass__ = TemplateMeta
 
     type = TemplateArgument(type="text", hidden=True, value=lambda self: self.__templatename__)
-    concurrence_idc = DeployArgument(label=u"机房间是否并发", type="checkbox")
-    concurrence_server = DeployArgument(label=u"机器间并发度", type="number", value=1)
+    concurrence_idc = DeployArgument(label=u"机房间是否并发", type="checkbox",required=False)
+    concurrence_server = DeployArgument(label=u"机器间并发度", type="number", value=1,required=False)
     contacters = TemplateArgument(label=u"通知邮箱", type="arrayinput", required=False, value=[])
     # required by set_servers_from_node
     exclude_offline = TemplateArgument(
@@ -43,11 +45,12 @@ class TemplateMixin(object):
         notice=u'若勾选，则发布中 traffic_ratio 为 0 机器不可见',
         type="checkbox", value=False)
 
-    servers = DeployArgument(label=u"发布机器", type="servers_checkbox", null=False)
+    servers = DeployArgument(label=u"发布机器", type="servers_checkbox", null=False, required=False)
     verbose = DeployArgument(label=u"详细输出", type="checkbox", value=True, required=False)
     pause_after_first_fail = DeployArgument(label=u'失败后立即暂停', type="checkbox", value=True,
                                             required=False)
-
+    hlg_select = DeployArgument(label=u"hlg", type="checkbox",null=False, required=False)
+    db_select = DeployArgument(label=u"db", type="checkbox",null=False, required=False)
     # noinspection PyAttributeOutsideInit
     @property
     def jobset_id(self):
@@ -118,7 +121,25 @@ class TemplateMixin(object):
                 }
             })
         return nodes
-
+    def _send_docker_request(self, confs):
+        url = 'http://docker.internal.DOMAIN.com/deploy/api/v1/service/create'
+        post_data = {}
+	post_data = confs['arguments']
+	post_data["idcs"] =  confs["idcs"]
+        post_data["jobid"] = self.jobset_id
+	print post_data
+        body = post_data
+        req = tornado.httpclient.HTTPRequest(
+            url=url,
+            method='POST',
+            body=json.dumps(body),
+            validate_cert=False)
+	http_client = tornado.httpclient.HTTPClient()
+        response = http_client.fetch(req)
+        # client = tornado.httpclient.AsyncHTTPClient()
+        # url = 'docker.DOMAIN.com/api/v1/service/create'
+        # post_data = { 'data': 'test data' }
+        # body = urllib.urlencode(post_data)
     # def set_deploy_status_watcher(self):
     #     def watcher(event):
     #         if event.type in (EventType.CREATED, EventType.CHANGED):
@@ -196,6 +217,19 @@ class TemplateMixin(object):
         except KazooException, e:
             raise FatalError("!!! %s !!!" % str(e))
 
+    def send_docker_deploy_request(self, new_confs):
+        confs = {}
+        confs.update(new_confs)
+        idcs = {}
+        if self.hlg_select:
+            idcs["hlg"] = confs["hlg_replic"]
+        if self.db_select:
+            idcs["db"] = confs["db_replic"]
+	confs["idcs"] = idcs
+	confs.pop("hlg_replic",None)
+	confs.pop("db_replic",None)
+        # if confs["hlg_select"]:
+        self._send_docker_request(confs)
 
 def generate_deploy_id():
     return random.randint(100, 921) * 10 ** 16 + int(time.time() * 10 ** 6)

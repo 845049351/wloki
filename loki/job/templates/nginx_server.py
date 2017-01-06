@@ -19,8 +19,8 @@ class NginxServer(JobTemplate, TemplateMixin):
                              items=make_items(["ag", "apps", "happiness", "public", "search"]))
     tp = DeployArgument(label=u"内网,外网", type="select", items=make_items(["internal", "external"]))
     idc = DeployArgument(label=u"机房", type="select", items=make_items(["common", "hy", "hlg", "db"]))
-    nm = DeployArgument(label=u"文件名", type="text", required=True, placeholder="loki_nosalabs")
-    server_names = DeployArgument(label=u"域名", type="text", required=True, placeholder="loki.nosa.me")
+    nm = DeployArgument(label=u"文件名", type="text", required=True, placeholder="loki_DOMAIN")
+    server_names = DeployArgument(label=u"域名", type="text", required=True, placeholder="loki.DOMAIN.com")
     log_format = DeployArgument(label=u"日志格式", type="text", value="main", required=True)
     upstream_node = DeployArgument(label=u"upstream node名称", type="text", required=True, placeholder="loki_nodes")
 

@@ -15,7 +15,7 @@ from google.protobuf import descriptor_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='gangr_rpc.proto',
   package='gangr.rpc',
-  serialized_pb='\n\x0fgangr_rpc.proto\x12\tgangr.rpc\"\x1a\n\x0b\x45\x63hoRequest\x12\x0b\n\x03str\x18\x01 \x02(\t\"\x1b\n\x0c\x45\x63hoResponse\x12\x0b\n\x03str\x18\x01 \x02(\t\"\x1f\n\rJobRpcRequest\x12\x0e\n\x06job_id\x18\x01 \x02(\x03\" \n\x0eJobRpcResponse\x12\x0e\n\x06status\x18\x01 \x02(\x08\x32\x8f\x02\n\x0cGangrService\x12\x37\n\x04\x65\x63ho\x12\x16.gangr.rpc.EchoRequest\x1a\x17.gangr.rpc.EchoResponse\x12@\n\tpause_job\x12\x18.gangr.rpc.JobRpcRequest\x1a\x19.gangr.rpc.JobRpcResponse\x12\x43\n\x0c\x63ontinue_job\x12\x18.gangr.rpc.JobRpcRequest\x1a\x19.gangr.rpc.JobRpcResponse\x12?\n\x08stop_job\x12\x18.gangr.rpc.JobRpcRequest\x1a\x19.gangr.rpc.JobRpcResponseB9\n\x1f\x63om.nosajia.rpc.example.protoB\x10\x45xampleRpcProtos\x88\x01\x01\x90\x01\x01')
+  serialized_pb='\n\x0fgangr_rpc.proto\x12\tgangr.rpc\"\x1a\n\x0b\x45\x63hoRequest\x12\x0b\n\x03str\x18\x01 \x02(\t\"\x1b\n\x0c\x45\x63hoResponse\x12\x0b\n\x03str\x18\x01 \x02(\t\"\x1f\n\rJobRpcRequest\x12\x0e\n\x06job_id\x18\x01 \x02(\x03\" \n\x0eJobRpcResponse\x12\x0e\n\x06status\x18\x01 \x02(\x08\x32\x8f\x02\n\x0cGangrService\x12\x37\n\x04\x65\x63ho\x12\x16.gangr.rpc.EchoRequest\x1a\x17.gangr.rpc.EchoResponse\x12@\n\tpause_job\x12\x18.gangr.rpc.JobRpcRequest\x1a\x19.gangr.rpc.JobRpcResponse\x12\x43\n\x0c\x63ontinue_job\x12\x18.gangr.rpc.JobRpcRequest\x1a\x19.gangr.rpc.JobRpcResponse\x12?\n\x08stop_job\x12\x18.gangr.rpc.JobRpcRequest\x1a\x19.gangr.rpc.JobRpcResponseB9\n\x1f\x63om.DOMAIN.rpc.example.protoB\x10\x45xampleRpcProtos\x88\x01\x01\x90\x01\x01')
 
 
 
@@ -162,7 +162,7 @@ class JobRpcResponse(_message.Message):
 
 
 DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), '\n\037com.nosajia.rpc.example.protoB\020ExampleRpcProtos\210\001\001\220\001\001')
+DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), '\n\037com.DOMAIN.rpc.example.protoB\020ExampleRpcProtos\210\001\001\220\001\001')
 
 _GANGRSERVICE = _descriptor.ServiceDescriptor(
   name='GangrService',

@@ -7,8 +7,8 @@ from .. import errors
 from ..node.nodes import TreeNode
 
 
-falcon_portal_addr = "http://falcon-portal.internal.nosa.me"
-falcon_internal_addr = "http://falcon-portal.nosa.me/template/view/"
+falcon_portal_addr = "http://falcon-portal.internal.DOMAIN.com"
+falcon_internal_addr = "http://falcon-portal.DOMAIN.com/template/view/"
 headers = {'X-Falcon-Token': 'token:Umn7BhILxJfsPNCzGYID0swJKFPQPm41'}
 
 

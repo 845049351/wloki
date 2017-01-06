@@ -8,7 +8,7 @@ from .app import settings
 
 
 def ldap_auth(username, password):
-    dn = 'uid=%s,ou=People,dc=nosajia,dc=com' % username
+    dn = 'uid=%s,ou=People,dc=DOMAIN,dc=com' % username
     ldapconn = ldap.initialize('ldap://%s' % settings.LDAP_HOST)
     try:
         ldapconn.simple_bind_s(dn, password)

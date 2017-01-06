@@ -224,7 +224,7 @@ class SyncAssetsDaemon(SyncBaseDeamon):
 
     def _get_assets_servers(self):
         try:
-            ret = requests.get("http://t.a.nosa.me/server/api/servers", timeout=30).content
+            ret = requests.get("http://t.a.DOMAIN.com/server/api/servers", timeout=30).content
         except Timeout:
             self.logger.error("fetch assets server api timeout")
             return None

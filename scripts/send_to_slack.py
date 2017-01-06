@@ -7,8 +7,8 @@ payload_template = '{{"channel": "#{channel}", "username": "deploybot", "text": 
 text_sections = [
     '*{job_name}*\\t`{before_status}` → `{current_status}`\\t[{updated_at}]\\t',
     '>发布人:  {creator}\\t[{created_at}]',
-    '>节点　:  <http://loki.nosa.me/job?nid={node_id}|{node_path}>',
-    '>ID　　:  <http://loki.nosa.me/job?nid=2911&tab=3&rid={job_id}|{job_id}>',
+    '>节点　:  <http://loki.DOMAIN.com/job?nid={node_id}|{node_path}>',
+    '>ID　　:  <http://loki.DOMAIN.com/job?nid=2911&tab=3&rid={job_id}|{job_id}>',
 ]
 payload_template += '\\n'.join(text_sections)
 payload_template += '", "icon_emoji": ":rocket:"}}'
@@ -21,7 +21,7 @@ payload = payload_template.format(
     job_id='7951440489782259404',
     node_id=2911,
     creator='mengxiao',
-    node_path='/nosajia/sre/package-search',
+    node_path='/DOMAIN/sre/package-search',
     current_status='success',
     before_status='doing',
     created_at='2015-08-25 17:00',

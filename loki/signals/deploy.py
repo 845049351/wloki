@@ -18,7 +18,7 @@ on_status_changed = Signal()
 
 logger = logging.getLogger("signals.deploy")
 
-SLACK_WEB_HOOK = "http://slack-proxy.hy01.internal.nosa.me/post"
+SLACK_WEB_HOOK = "http://slack-proxy.hy01.internal.DOMAIN.com/post"
 
 
 @on_status_changed.connect
@@ -31,8 +31,8 @@ def send_mail(sender, operator=None, **kwargs):
     status = Status(sender.status).name \
         if sender.status != Status.unknown \
         else "started"
-    recipients = sender.parameters['contacters'] + ["ep-robots@nosa.me"]
-    msg = Message(u'[SRE] 发布 "%s"' % sender.name, body=status, sender="work@nosa.me",
+    recipients = sender.parameters['contacters'] + ["ep-robots@DOMAIN.com"]
+    msg = Message(u'[SRE] 发布 "%s"' % sender.name, body=status, sender="work@DOMAIN.com",
                   recipients=recipients)
     if not settings.DEBUG:
         mail.send(msg)

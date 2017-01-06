@@ -7,16 +7,16 @@ from ..base.handlers import APIHandler
 
 
 DOMAIN_WHITELIST = [
-    'nosa.me',
+    'DOMAIN.com',
     'wdjcdn.com',
     'wdjimg.com',
-    'nosa.in',
-    'nosa.im',
-    'nosajia.cn',
-    'nosajia.fm',
-    'nosa.com',
-    'nosajia.im',
-    'nosa.me',
+    'wandou.in',
+    'wandou.im',
+    'DOMAIN.cn',
+    'DOMAIN.fm',
+    'wandou.com',
+    'DOMAIN.im',
+    'DOMAIN.com',
     'snappea.com',
     'snaptubevideo.com',
     'snaptube.in'

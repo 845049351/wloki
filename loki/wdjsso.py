@@ -7,7 +7,7 @@
     "function": "Engineering Productivity",
     "school": "NanXiang",
     "name": "UserName",
-    "img": "http://who.nosa.me/static/img/mengxiao.jpg",
+    "img": "http://who.DOMAIN.com/static/img/mengxiao.jpg",
     "socials": [
         {
             "type": "twitter",
@@ -26,7 +26,7 @@
     "location": "A111",
     "xingzuo": "ChuNv",
     "objective": "SRE, Python, Web",
-    "mail": "username@nosa.me",
+    "mail": "username@DOMAIN.com",
     "type": "person",
     "id": "username",
     "edate": "2014-02-21"
@@ -57,8 +57,8 @@ def get_user_by_sessionid(sessionKey):
 
 
 def get_login_address(redirect):
-    return "https://sso.nosa.me/?redirect=%s" % redirect
+    return "https://sso.DOMAIN.com/?redirect=%s" % redirect
 
 
 def get_logout_address(redirect):
-    return "https://sso.nosa.me/logout/?redirect=%s" % redirect
+    return "https://sso.DOMAIN.com/logout/?redirect=%s" % redirect

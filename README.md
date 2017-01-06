@@ -32,11 +32,11 @@ Loki 的主要用途:
 
 * **如何查看服务器性能指标**
 
-    在这[系统展示](http://loki.nosa.me/draw)里找到你所在的产品线，点进去就可以看到各种指标
+    在这[系统展示](http://loki.DOMAIN.com/draw)里找到你所在的产品线，点进去就可以看到各种指标
 
 * 如何查看域名的各个指标，如 qps，响应时间，使用带宽，可用率等
 
-    在[域名展示](http://loki.nosa.me/domain)可以查到域名的四个指标：
+    在[域名展示](http://loki.DOMAIN.com/domain)可以查到域名的四个指标：
 
     * queries per second
     * response time (ms)
@@ -49,34 +49,12 @@ Loki 的主要用途:
 
 ### 部署
 
-请参考[文档](https://docs.nosa.me/a/nosa.me/document/d/1Rz5oBQjWa5FeLiErzaBGGbWtiBQiJ8c1Uj5jc4Wl8b4)
+请参考[文档]()
 
 
 ## 开发
 
 ### 各组件负责人
-
-* 监控展示
-
-    * 数据存储
-
-        * 使用 [opentsdb](http://opentsdb.net/) @wateer
-        * opentsdb 使用 hbase @wateer
-
-    * 数据收集
-
-        * pandora-client, (yum search pandora-client) @wateer
-        * 还有一些离线计算的程序，比如计算一个域名的、一个产品线的各项指标，参见[文档](https://docs.google.com/a/nosa.me/document/d/1YCYudXcnuzG0ih7gN7q0VtjmvZWb_PDWbBjxbMpat00/edit) @wateer
-
-    * 数据展示
-
-        * it's loki's job
-
-* 部署
-
-    * [job tracker](https://git.nosa.me/#/admin/projects/gangr)
-
-    * [agent](https://git.nosa.me/#/admin/projects/vali)
 
 ### 环境搭建
 
@@ -154,8 +132,8 @@ Loki 的主要用途:
 
    由于线上环境一般不允许外网访问，因此需要使用内部提供的 pypi 源进行安装:
 
-        easy_install -i http://pypi.hy01.internal.nosa.me/simple/ protobuf
-        pip install --trusted-host pypi.hy01.internal.nosa.me -i http://pypi.hy01.internal.nosa.me/simple/ -r requirements.txt
+        easy_install -i http://pypi.hy01.internal.DOMAIN.com/simple/ protobuf
+        pip install --trusted-host pypi.hy01.internal.DOMAIN.com -i http://pypi.hy01.internal.DOMAIN.com/simple/ -r requirements.txt
 
    > 注: 由于 protobuf 库有 `setup_requires` 项不受 pip 指定 index-url 的控制，因此需先使用 `easy_install` 单独安装
 
@@ -366,21 +344,6 @@ Loki 的主要用途:
 
 现有业务功能模块列出如下:
 
-* `user` 与用户有关的部分
-
-* `monitor` 监控和报警的配置部分
-
-* `alarm` 报警消息的展示部分，未来可能包含 issue tracker 的功能
-
-* `draw` 监控数据画图
-
-* `ptree` 服务树描述管理
-
-* `audit` 服务树节点更改审核
-
-* `job` 任务管理
-
-* `tpl` 模板管理
 
 
 ## Note
@@ -398,31 +361,4 @@ Loki 的主要用途:
 * Fix OpenTSDB
 
     `tsdb fsck --fix 20d-ago avg domain.availability --config /etc/opentsdb/opentsdb.conf`
-
-
-## 独立模块
-
-### Poseidon
-
-> by wateer 
-
-#### Etymology
-
-Poseidon is one of the twelve Olympian deities of the pantheon in Greek
-mythology. His main domain is the ocean, and he is called the "God of the
-Sea".
-
-#### Usage
-    python -m poseidon
-
-### torext
-
-> by mengxiao
-
-
-## 维护人
-
-| name | email |
-| ---- | ----- |
-| wateer | wateer@nosa.me |
 

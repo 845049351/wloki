@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# jiangchangchun@nosa.me
+# jiangchangchun@DOMAIN.com
 
 import re
 import json
@@ -199,9 +199,9 @@ class DefaultHandler(APIHandler):
 class DebugHandler(APIHandler):
     """DebugHandler, get codis debug info"""
     def get(self, name, addr):
-        if not re.match(r'.+(\.nosajia\.com):\d+', str(addr)):
+        if not re.match(r'.+(\.DOMAIN\.com):\d+', str(addr)):
             tmp = addr.split(":")
-            addr = tmp[0] + ".nosa.me:" + tmp[1]
+            addr = tmp[0] + ".DOMAIN.com:" + tmp[1]
         url = "http://" + addr + "/debug/vars"
         try:
             resp = requests.get(url)

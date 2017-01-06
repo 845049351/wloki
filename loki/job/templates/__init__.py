@@ -8,3 +8,4 @@ from . import nginx_deploy
 from . import nginx_upstream_add_or_update
 from . import nginx_upstream_delete
 from . import nginx_server
+from . import docker_deploy

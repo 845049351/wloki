@@ -5,7 +5,7 @@
 daemon for draw service
 '''
 
-__author__ = 'zhouqiang@nosa.me'
+__author__ = 'zhouqiang@DOMAIN.com'
 
 
 import os
@@ -220,8 +220,8 @@ class Availability(object):
         self.process_info[domain] = p.pid
 
     def update_urls(self):
-        self.urls.append('account.nosa.me/v4/api/profile')
-        self.urls.append('www.nosa.me/')
+        self.urls.append('account.DOMAIN.com/v4/api/profile')
+        self.urls.append('www.DOMAIN.com/')
 
     def stop_scan(self, pid):
         os.kill(pid, 9)

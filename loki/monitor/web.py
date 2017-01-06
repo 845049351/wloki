@@ -8,17 +8,17 @@ class RelativesIndexHandler(BaseHandler):
 
 class TemplatesIndexHandler(BaseHandler):
     def get(self):
-        self.redirect("http://falcon-portal.nosa.me/templates")
+        self.redirect("http://falcon-portal.DOMAIN.com/templates")
 
 
 class ExpressionsIndexHandler(BaseHandler):
     def get(self):
-        self.redirect("http://falcon-portal.nosa.me/expressions")
+        self.redirect("http://falcon-portal.DOMAIN.com/expressions")
 
 
 class NodatasIndexHandler(BaseHandler):
     def get(self):
-        self.redirect("http://falcon-portal.nosa.me/nodatas")
+        self.redirect("http://falcon-portal.DOMAIN.com/nodatas")
 
 
 handlers = [

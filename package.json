@@ -2,11 +2,11 @@
   "name": "loki",
   "version": "1.0.0",
   "description": "Loki the automatical ops system.",
-  "author": "sre-team@nosa.me",
+  "author": "sre-team@DOMAIN.com",
   "license": "WDJ",
   "repository": {
     "type": "git",
-    "url": "https://git.nosa.me/#/admin/projects/loki"
+    "url": "https://git.DOMAIN.com/#/admin/projects/loki"
   },
   "main": "Gruntfile.js",
   "dependencies": {

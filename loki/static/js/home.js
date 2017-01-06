@@ -8,12 +8,12 @@ require([
 ], function(moment, loki, chart, datetime, timepicker_widget) {
 
     var BANDWIDTH_DOMAINS = [
-        'api.nosa.me',
-        'ias.nosa.me',
-        'apps.nosa.me',
-        'adslist.nosa.me',
-        'account.nosa.me',
-        'click.nosa.me',
+        'api.DOMAIN.com',
+        'ias.DOMAIN.com',
+        'apps.DOMAIN.com',
+        'adslist.DOMAIN.com',
+        'account.DOMAIN.com',
+        'click.DOMAIN.com',
     ];
 
     loki.configure({

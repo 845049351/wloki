@@ -1,6 +1,6 @@
 # coding: utf-8
 
-__author__ = "qinguoan@nosa.me"
+__author__ = "qinguoan@DOMAIN.com"
 
 import os
 import sys

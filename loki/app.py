@@ -34,18 +34,15 @@ DEFAULT_ROUTES = [
     ('/draw', 'draw.web'),
     ('/nodes', 'node.web'),
     ('/domains', 'domain.web'),
-    ('/cdn', 'cdn.web'),
     ('/redis', 'redis.web'),
     ('/asset', 'asset.web'),
     ('/privilege', 'privilege.web'),
 
     ('/users', 'user.handlers'),
+    ('/config', 'config.web'),
     ('/monitor', 'monitor.web'),
     ('/tsdb', 'tsdb.handlers'),
-    ('/ocean', 'ocean.handlers'),
     ('/job', 'job.handlers'),
-
-    # ('/raindrop', 'raindrop.web'),
 
     # APIs
     ('/api/job', 'job.api'),
@@ -58,6 +55,7 @@ DEFAULT_ROUTES = [
     ('/api/asset', 'asset.api'),
     ('/api/privilege', 'privilege.api'),
 
+    ('/api/config', 'config.api'),
     ('/api/monitor', 'monitor.api'),
 
     # For backward compatibility

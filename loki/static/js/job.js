@@ -251,7 +251,8 @@ require([
 
                 var data = jsform.serializeForm($(this)),
                     type = data.type,
-                    errors = detail_schema.validate(data);
+                    //errors = detail_schema.validate(data);
+                    errors = []
 
                 if (errors && errors.length) {
                     console.warn('errors', errors);

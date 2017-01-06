@@ -29,7 +29,7 @@ class AssetHandler(APIHandler):
                                                              RawServer.validity)
                if server.searchable_info is not None]
 
-        # compatible format for http://t.a.nosa.me/server/api/servers
+        # compatible format for http://t.a.DOMAIN.com/server/api/servers
         if self.get_argument('compatible', None):
             for el in raw:
                 el['_id'] = el['sn']

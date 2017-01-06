@@ -115,7 +115,7 @@ COOKIE_SECRET = 'J23Yc606TDG2Pc5J816OYnfYOgHd2kQIvxwmXqNskIE='
 COOKIE_EXPIRE_DAY = 7
 
 # Cookie 作用域名
-COOKIE_DOMAIN = 'loki.nosa.me'
+COOKIE_DOMAIN = 'loki.DOMAIN.com'
 
 # 用于验证身份的 Cookie 键
 AUTH_COOKIE = 'loki_session'
@@ -144,7 +144,7 @@ SQLALCHEMY_CDN_SYSTEM = {
 }
 
 # LDAP
-LDAP_HOST = "ldap.nosa.me"
+LDAP_HOST = "ldap.DOMAIN.com"
 
 # Redis
 REDIS_ADDR = '10.19.25.63'
@@ -152,22 +152,22 @@ REDIS_PORT = 6384
 REDIS_DB_FOR_CACHE = 1
 
 # Sentry
-# SENTRY_SERVER_URL='http://b49c355be66346bf8d87d1f35c0d7209:b4e762b6449440c5b0c4646155f1deb4@sentry.hy01.internal.nosa.me/3'
-SENTRY_SERVER_URL = 'http://67a4ffba14c4433f808dbded9c72378d:91be2c8be78f40d584f96ecd8d1d3306@sentry2.hy01.internal.nosa.me/5'
+# SENTRY_SERVER_URL='http://b49c355be66346bf8d87d1f35c0d7209:b4e762b6449440c5b0c4646155f1deb4@sentry.hy01.internal.DOMAIN.com/3'
+SENTRY_SERVER_URL = 'http://67a4ffba14c4433f808dbded9c72378d:91be2c8be78f40d584f96ecd8d1d3306@sentry2.hy01.internal.DOMAIN.com/5'
 
 # OpenTSDB
 # OPENTSDB_URL = 'http://10.0.12.235:4242'
-OPENTSDB_URL = 'http://loki.hy01.internal.nosa.me/tsdbproxy'
+OPENTSDB_URL = 'http://loki.hy01.internal.DOMAIN.com/tsdbproxy'
 OPENTSDB_CACHE_KEY_PREFIX = 'tsdbcache:'
 OPENTSDB_CACHE_TTL = 60 * 3  # 3 min
 OPENTSDB_TIMEOUT = 60  # 60 sec
 
 # MAIL
-SMTP_HOST = 'mx.hy01.nosa.me'
+SMTP_HOST = 'mx.hy01.DOMAIN.com'
 SMTP_PORT = 25
 
 # FOR MAIL MODULE
-MAIL_SERVER = 'mx.hy01.nosa.me'
+MAIL_SERVER = 'mx.hy01.DOMAIN.com'
 MAIL_PORT = 25
 #MAIL_USE_TLS = False
 #MAIL_USE_SSL = False
@@ -177,9 +177,9 @@ MAIL_PORT = 25
 #DEFAULT_MAIL_SENDER = None
 
 # SMS
-SMS_GATEWAY_URL = 'http://sms-gateway.nosa.me/api/send'
+SMS_GATEWAY_URL = 'http://sms-gateway.DOMAIN.com/api/send'
 SMS_SRE_ACCOUNT = 'sre'
-SMS_SRE_TOKEN = 'MYNqvSOEfsrbPChJ'
+SMS_SRE_TOKEN = ''
 
 # jstree
 TREE_ROOT_ID = 1
@@ -189,96 +189,33 @@ DEBUG_USER = '_dev'
 
 ADMIN_USERS = [
     # SRE
-    'aaa',
-    'bbb',
-
-    # EP
-    'xxx',
-
-    # Others
-    'yyy',
-
-    # For debug mode
-    DEBUG_USER
+    'user',
 ]
 
 GROUPS = {
-    'ti': ['aaa'],
-    'gv': ['aaa'],
-    'apps_0': [
-        'bbb',
-        'ccc',
-        'aaa'
-    ],
-    'muce': [
-        'ddd'
-        'ccc',
-    ],
-    'lock_screen': [
-        'fff',
-        'ggg',
-    ],
     'ads': [
-        'aaa',
-        'bbb',
-        'ddd'
-    ],
-    'baobab': [
-        'aaa',
-        'bbb'
+        'user',
     ]
 }
 
 GROUP_NODE_ACCESS = {
-    'ti': [3223, 2509],
-    'gv': [3221, 2408],
-    'apps_0': [
-        2356,
-        2509,  # java8
-        2408,  # java7
-        2485,  # java6
-        2357,
-        2369
-    ],
-    'muce': [
-        3006,
-        3007,
-        2408,
-        2509,
-        3463,
-        2677
-    ],
-    'lock_screen': [
-        3123,
-        3262,
-        2988
-    ],
     'ads': [
         2485,
-        2408,
-        2509,
-        2382,
-        2638,
-        2211,
-        3459
-    ],
-    'baobab': [
-        2408,
-        2903
     ]
 }
 
 
-SSO_ADDR = 'https://sso.nosa.me'
+SSO_ADDR = 'https://sso.DOMAIN.com'
 
-WHO_PERSON_LIST_ADDR = 'http://who.hy01.internal.nosa.me/api/v1/list/person/'
-WHO_PERSON_ADDR = 'http://who.hy01.internal.nosa.me/api/v1/person/'
+WHO_PERSON_LIST_ADDR = 'http://who.hy01.internal.DOMAIN.com/api/v1/list/person/'
+WHO_PERSON_ADDR = 'http://who.hy01.internal.DOMAIN.com/api/v1/person/'
 
-PACKAGE_HOST = 'monitor11.hy01'
-DOWNLOAD_URL = 'http://download.hy01.nosa.me/download'
+DOWNLOAD_URL = 'http://download.hy01.DOMAIN.com/download'
 
 HEALTHY_FILE = '/home/work/lighttpd/nginx_check/index.html'
-PUBLIC_DOMAIN = "http://loki.nosa.me/"
+PUBLIC_DOMAIN = "http://loki.DOMAIN.com/"
+
+PUPPET_CLASS_URL = "http://puppetca0.hlg01:8000/classes"
 
 try:
     from .local_settings import *

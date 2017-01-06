@@ -28,7 +28,7 @@ class PackageItemHandler(BaseHandler):
 class ImagesHandler(BaseHandler):
     def get(self):
         import requests
-        url = "http://docker.internal.nosa.me/image/services"
+        url = "http://docker.internal.DOMAIN.com/image/services"
         images = requests.get(url).json()
         self.render('job/images.html', images=images)
 
@@ -37,10 +37,10 @@ class ImagesItemHandler(BaseHandler):
     def get(self, name):
         import requests
 
-        url = "http://docker.internal.nosa.me/image/services"
+        url = "http://docker.internal.DOMAIN.com/image/services"
         images = requests.get(url).json()
 
-        url = "http://docker.internal.nosa.me/image/builders/" + name
+        url = "http://docker.internal.DOMAIN.com/image/builders/" + name
         image_items = requests.get(url).json()
 
         self.render('job/images.html', name=name, images=images, image_items=image_items)

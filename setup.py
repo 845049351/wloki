@@ -19,7 +19,7 @@ setup(
     name='loki',
     version=__version__,
     author='sre-team',
-    author_email='sre-team@nosa.me',
+    author_email='sre-team@DOMAIN.com',
     description='Automated Operation System',
     #long_description=open('README.md').read(),
     #scripts=[],

@@ -48,7 +48,10 @@ class SystemInfoFetcher(object):
     @classmethod
     def get_dmid_info(cls, name):
         command = cls.DMID_COMMAND + [name]
-        return check_output(command).strip()
+        import re
+        for line in check_output(command).splitlines():
+            if not re.match("^#", line):
+                return line.strip()
 
     @classproperty
     def hostname(cls):
